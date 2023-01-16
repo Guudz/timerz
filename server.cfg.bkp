@@ -1,0 +1,360 @@
+### AUTOMATICALY SET BY PTERODACTYL ###
+# Only change the IP if you're using a server with multiple network interfaces, otherwise change the port only.
+endpoint_add_tcp "0.0.0.0:30062"
+endpoint_add_udp "0.0.0.0:30062"
+
+exec permissions.cfg
+
+# Set your server's hostname
+sv_hostname "Demon RZ  |  Discord.gg/dmnrz | 🔥High Performance🔥| Low Desync| 🔫Competitive Gang Server🔫 | 1v1 / 3v3 / 5v5 / Redzone etc |"
+
+set es_enableCustomData 1
+set mysql_connection_string "server=135.148.34.116;uid=u23649_GUBfh8E7ig;password=EOJh6qm70j7OjxhjdV.pf+@!;database=s23649_dmrz"
+set mysql_slow_query_warning 50
+set onesync_enabled true
+sv_tebexSecret 6d3f880794d9728b90a2ae2470c818fc4724f52d
+
+# Set serverlist name and description
+sets sv_projectName "Demon RZ"
+sets sv_projectDesc "Demon RZ  |  Discord.gg/dmnrz | 🔥High Performance🔥| Low Desync| 🔫Competitive Gang Server🔫 | 1v1 / 3v3 / 5v5 / Redzone etc |"
+
+# Server player slot limit (must be between 1 and 32, unless using OneSync)
+sv_maxclients 62
+
+# Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
+# -> 9F17E28D6A7ADAF6269E6EA248EB41B5 "" with the key
+set steam_webApiKey 9F17E28D6A7ADAF6269E6EA248EB41B5
+
+# License key for your server (https://keymaster.fivem.net)
+set sv_licenseKey cfxk_1RxU2Fw7RM0c2uNpIyReO_3D2pD8
+########################################
+
+#################### DEFAULT FIVEM ####################
+start chat
+start system
+#################### DMNRZCORE ####################
+start dmnrz-Discord-Command
+start dmnrz-core
+start dmnrz-loading
+start dmnrz-logs
+start dmnrz-carwipe
+start dmnrz-hud
+start dmnrz-clothing
+start dmnrz-gangclothes
+start dmnrz-admin
+start dmnrz-mumble-voip
+
+#################### ANTI-CHEAT ####################
+#################### QUEUE BOT ####################
+#################### CARS ####################
+#################### DISCORD ####################
+start Badger_Discord_API
+start dmnrz-Discord
+#################### MISC ####################
+start mysql-async
+start mythic_notify
+start [mixdev]
+
+set sv_displayqueue true # shows queue count in the server name '[count] server name'
+
+# This allows players to use scripthook-based plugins such as the legacy Lambda Menu.
+# Set this to 1 to allow scripthook. Do note that this does _not_ guarantee players won't be able to use external plugins.
+sv_scriptHookAllowed 0
+
+# Uncomment this and set a password to enable RCON. Make sure to change the password - it should look like rcon_password "YOURPASSWORD"
+#rcon_password ""
+
+# A comma-separated list of tags for your server.
+# For example:
+# - sets tags "drifting, cars, racing"
+# Or:
+# - sets tags "roleplay, military, tanks"
+sets tags "default"
+
+# A valid locale identifier for your server's primary language.
+# For example "en-US", "fr-CA", "nl-NL", "de-DE", "en-GB", "pt-BR"
+sets locale "en-US" 
+# please DO replace root-AQ on the line ABOVE with a real language! :)
+
+# Set an optional server info and connecting banner image url.
+# Size doesn't matter, any banner sized image will be fine.
+sets banner_detail "https://cdn.discordapp.com/attachments/898715520637992990/908074198625312778/new_dmnrz_banner.gif"
+sets banner_connecting "https://cdn.discordapp.com/attachments/898715520637992990/908074198625312778/new_dmnrz_banner.gif"
+
+# Nested configs!
+#exec resources.cfg
+
+# Loading a server icon (96x96 PNG file)
+load_server_icon DemonRZ.png
+
+# convars which can be used in scripts
+#set temp_convar "hey world!"
+
+# Uncomment this line if you do not want your server to be listed in the server browser.
+# Do not edit it if you *do* want your server listed.
+#sv_master1 ""
+
+# Add system admins
+add_ace group.admin command allow # allow all commands
+add_ace group.admin command.quit deny # but don't allow quit
+add_principal identifier.fivem:1 group.admin # add the admin to the group
+
+# Hide player endpoints in external log output.
+sv_endpointprivacy true
+
+# enable OneSync with default configuration (required for server-side state awareness)
+onesync_enabled true
+
+
+
+####Admin Menu####
+
+####Server Owners####
+add_principal identifier.steam:110000149c42455 group.owneram  #Syco
+add_principal identifier.steam:110000114b4b1e6 group.owneram  #Fusion
+add_principal identifier.steam: group.owneram  # 
+
+###Developer###
+add_principal identifier.steam: group.owneram  #
+add_principal identifier.steam: group.owneram  #
+
+####Head Administration####
+add_principal identifier.steam:11000014739bccf group.headadminam #Solo
+add_principal identifier.steam:110000144f75899 group.headadminam #Uzi/Von
+add_principal identifier.steam: group.headadminam #
+
+####Administration####
+add_principal identifier.steam:110000133b219b6 group.adminam  #Astriidd/bin
+add_principal identifier.steam:11000014aefe1e1  group.adminam #Kylo
+add_principal identifier.steam: group.adminam  #
+add_principal identifier.steam: group.adminam  #
+
+####HeadModeration####
+add_principal identifier.steam:110000145e332a6 group.hmodam  #lurks
+add_principal identifier.steam:11000011a4f9b5a group.hmodam  #Paul
+add_principal identifier.steam:110000142d14aa5 group.hmodam  #Tester
+add_principal identifier.steam:1100001482816be group.hmodam  #Dior
+add_principal identifier.steam: group.hmodam  #
+
+####Moderation####
+add_principal identifier.steam:1100001455d74a9 group.modam  #pehrc
+add_principal identifier.steam:1100001472b4976 group.modam  #Divine
+add_principal identifier.steam:110000147749e30 group.modam  #K9
+add_principal identifier.steam:1100001472b4976 group.modam  #DHOP
+add_principal identifier.steam: group.modam  #
+add_principal identifier.steam: group.modam  #
+
+####T-mod####
+add_principal identifier.steam:110000144bc68e7 group.modam  #Lampy
+add_principal identifier.steam:11000013c56f0f1 group.modam  #Rawk
+add_principal identifier.steam:110000144f3a9f5 group.modam  #Twitch
+add_principal identifier.steam:1100001341058d2 group.modam  #Carti
+add_principal identifier.steam: group.modam  #
+add_principal identifier.steam: group.modam  #
+
+
+####Server Owners####
+add_ace group.owneram venomadmin.kick allow
+add_ace group.owneram venomadmin.ban allow
+add_ace group.owneram venomadmin.unban allow
+add_ace group.owneram venomadmin.manage allow
+add_ace group.owneram venomadmin.noclip allow
+add_ace group.owneram venomadmin.godmode allow
+add_ace group.owneram venomadmin.screenshot allow
+add_ace group.owneram venomadmin.invisibility allow
+add_ace group.owneram venomadmin.revive allow
+add_ace group.owneram venomadmin.pedwipe allow
+add_ace group.owneram venomadmin.objectwipe allow
+add_ace group.owneram venomadmin.masswipe allow
+add_ace group.owneram venomadmin.customped allow
+add_ace group.owneram venomadmin.forceskin allow
+add_ace group.owneram venomadmin.bring allow
+add_ace group.owneram venomadmin.slap allow
+add_ace group.owneram venomadmin.clearloadout allow
+add_ace group.owneram venomadmin.immune allow
+add_ace group.owneram venomadmin.setbank allow
+add_ace group.owneram venomadmin.setgroup allow
+add_ace group.owneram venomadmin.carwipe allow
+add_ace group.owneram venomadmin.setpermlevel allow
+add_ace group.owneram venomadmin.setmoney allow
+add_ace group.owneram venomadmin.freeze allow
+add_ace group.owneram venomadmin.spawnvehicle allow
+add_ace group.owneram venomadmin.openmenu allow
+add_ace group.owneram wiggyac.bypass allow
+
+179
+add_ace group.owneram venomadmin.freeze allow
+180
+add_ace group.owneram venomadmin.spawnvehicle allow
+181
+add_ace group.owneram venomadmin.openmenu allow
+182
+add_ace group.owneram wiggyac.bypass allow
+####Head Administration####
+add_ace group.headadminam venomadmin.kick allow
+add_ace group.headadminam venomadmin.ban allow
+add_ace group.headadminam venomadmin.unban allow
+add_ace group.headadminam venomadmin.manage allow
+add_ace group.headadminam venomadmin.noclip allow
+add_ace group.headadminam venomadmin.godmode allow
+add_ace group.headadminam venomadmin.screenshot allow
+add_ace group.headadminam venomadmin.invisibility allow
+add_ace group.headadminam venomadmin.revive deny
+add_ace group.headadminam venomadmin.pedwipe deny
+add_ace group.headadminam venomadmin.objectwipe allow
+add_ace group.headadminam venomadmin.masswipe deny
+add_ace group.headadminam venomadmin.customped allow
+add_ace group.headadminam venomadmin.forceskin allow
+add_ace group.headadminam venomadmin.bring allow
+add_ace group.headadminam venomadmin.slap allow
+add_ace group.headadminam venomadmin.clearloadout allow
+add_ace group.headadminam venomadmin.immune deny
+add_ace group.headadminam venomadmin.setbank deny
+add_ace group.headadminam venomadmin.setgroup deny
+add_ace group.headadminam venomadmin.carwipe allow
+add_ace group.headadminam venomadmin.setpermlevel deny
+add_ace group.headadminam venomadmin.setmoney deny
+add_ace group.headadminam venomadmin.freeze allow
+add_ace group.headadminam venomadmin.spawnvehicle allow
+add_ace group.headadminam venomadmin.openmenu allow
+add_ace group.headadminam wiggyac.bypass allow
+
+####Administration####
+add_ace group.adminam venomadmin.kick allow
+add_ace group.adminam venomadmin.ban allow
+add_ace group.adminam venomadmin.unban allow
+add_ace group.adminam venomadmin.godmode allow
+add_ace group.adminam venomadmin.customped allow
+add_ace group.adminam venomadmin.forceskin allow
+add_ace group.adminam venomadmin.screenshot allow
+add_ace group.adminam venomadmin.slap allow
+add_ace group.adminam venomadmin.clearloadout allow
+add_ace group.adminam venomadmin.invisibility allow
+add_ace group.adminam venomadmin.immune deny
+add_ace group.adminam venomadmin.carwipe allow
+add_ace group.adminam venomadmin.revive allow
+add_ace group.adminam venomadmin.noclip allow
+add_ace group.adminam venomadmin.pedwipe deny
+add_ace group.adminam venomadmin.objectwipe deny
+add_ace group.adminam venomadmin.masswipe deny
+add_ace group.adminam venomadmin.carwipe allow
+add_ace group.adminam venomadmin.setbank deny
+add_ace group.adminam venomadmin.setgroup deny
+add_ace group.adminam venomadmin.bring allow
+add_ace group.adminam venomadmin.setpermlevel deny
+add_ace group.adminam venomadmin.setmoney deny
+add_ace group.adminam venomadmin.manage deny
+add_ace group.adminam venomadmin.freeze allow
+add_ace group.adminam venomadmin.spawnvehicle allow
+add_ace group.adminam venomadmin.openmenu allow
+add_ace group.adminam wiggyac.bypass allow
+
+####HeadModeration####
+add_ace group.hmodam venomadmin.kick allow
+add_ace group.hmodam venomadmin.ban deny
+add_ace group.hmodam venomadmin.unban deny
+add_ace group.hmodam venomadmin.manage deny
+add_ace group.hmodam venomadmin.noclip allow
+add_ace group.hmodam venomadmin.godmode deny
+add_ace group.hmodam venomadmin.screenshot allow
+add_ace group.hmodam venomadmin.invisibility allow
+add_ace group.hmodam venomadmin.revive deny
+add_ace group.hmodam venomadmin.pedwipe deny
+add_ace group.hmodam venomadmin.objectwipe deny
+add_ace group.hmodam venomadmin.masswipe deny
+add_ace group.hmodam venomadmin.customped deny
+add_ace group.hmodam venomadmin.forceskin deny
+add_ace group.hmodam venomadmin.bring allow
+add_ace group.hmodam venomadmin.slap allow
+add_ace group.hmodam venomadmin.clearloadout allow
+add_ace group.hmodam venomadmin.immune deny
+add_ace group.hmodam venomadmin.setbank deny
+add_ace group.hmodam venomadmin.setgroup deny
+add_ace group.hmodam venomadmin.carwipe allow
+add_ace group.hmodam venomadmin.setpermlevel deny
+add_ace group.hmodam venomadmin.setmoney deny
+add_ace group.hmodam venomadmin.freeze allow
+add_ace group.hmodam venomadmin.spawnvehicle deny
+add_ace group.hmodam venomadmin.openmenu allow
+add_ace group.hmodam wiggyac.bypass allow
+
+####Moderation####
+add_ace group.modam venomadmin.kick allow
+add_ace group.modam venomadmin.ban deny
+add_ace group.modam venomadmin.unban deny
+add_ace group.modam venomadmin.manage deny
+add_ace group.modam venomadmin.noclip allow
+add_ace group.modam venomadmin.godmode deny
+add_ace group.modam venomadmin.screenshot allow
+add_ace group.modam venomadmin.invisibility deny
+add_ace group.modam venomadmin.revive allow
+add_ace group.modam venomadmin.pedwipe deny
+add_ace group.modam venomadmin.objectwipe deny
+add_ace group.modam venomadmin.masswipe deny
+add_ace group.modam venomadmin.customped deny
+add_ace group.modam venomadmin.forceskin deny
+add_ace group.modam venomadmin.bring allow
+add_ace group.modam venomadmin.slap deny
+add_ace group.modam venomadmin.clearloadout deny
+add_ace group.modam venomadmin.immune deny
+add_ace group.modam venomadmin.setbank deny
+add_ace group.modam venomadmin.setgroup deny
+add_ace group.modam venomadmin.carwipe deny
+add_ace group.modam venomadmin.setpermlevel deny
+add_ace group.modam venomadmin.setmoney deny
+add_ace group.modam venomadmin.freeze allow
+add_ace group.modam venomadmin.spawnvehicle deny
+add_ace group.modam venomadmin.openmenu allow
+add_ace group.modam wiggyac.bypass allow
+
+####T-mod####
+add_ace group.tmod venomadmin.kick deny
+add_ace group.tmod venomadmin.ban deny
+add_ace group.tmod venomadmin.unban deny
+add_ace group.tmod venomadmin.manage deny
+add_ace group.tmod venomadmin.noclip deny
+add_ace group.tmod venomadmin.godmode deny
+add_ace group.tmod venomadmin.screenshot allow
+add_ace group.tmod venomadmin.invisibility deny
+add_ace group.tmod venomadmin.revive deny
+add_ace group.tmod venomadmin.pedwipe deny
+add_ace group.tmod venomadmin.objectwipe deny
+add_ace group.tmod venomadmin.masswipe deny
+add_ace group.tmod venomadmin.customped deny
+add_ace group.tmod venomadmin.forceskin deny
+add_ace group.tmod venomadmin.bring allow
+add_ace group.tmod venomadmin.slap deny
+add_ace group.tmod venomadmin.clearloadout deny
+add_ace group.tmod venomadmin.immune deny
+add_ace group.tmod venomadmin.setbank deny
+add_ace group.tmod venomadmin.setgroup deny
+add_ace group.tmod venomadmin.carwipe deny
+add_ace group.tmod venomadmin.setpermlevel deny
+add_ace group.tmod venomadmin.setmoney deny
+add_ace group.tmod venomadmin.freeze deny
+add_ace group.tmod venomadmin.spawnvehicle deny
+add_ace group.tmod venomadmin.openmenu allow
+add_ace group.tmod wiggyac.bypass deny
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sv_forceIndirectListing false
+sv_listingIpOverride "51.81.59.12"
